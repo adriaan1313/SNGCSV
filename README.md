@@ -3,6 +3,6 @@ A little js thing to turn [Soundation](https://soundation.com/) .sng files into 
 
 **Problems**
 
-It sort of breaks when two of the same notes are played on the same track and one starts after and ends before the other one.
+It sort of breaks when two of the same notes are played on the same track and one starts while the other is still playing.
 
 It does not do effects, filters or instruments... yet (no i probably won't do anything with this)
