@@ -303,14 +303,15 @@ function go(){
 	for(let i = 0; i < file.channels.length; i++){
 		file.channels[i].regions.sort(compare);
 		outstr+=`${i+1}, 0, Start_track\n${i+1}, 0, Tempo, ${60000000/file.bpm}\n${i+1}, 0, Program_c, 0, 0\n${i+1}, 0, Control_c, 0, 7, ${Math.round(file.channels[i].volume/2*127)}\n${i+1}, 0, Control_c, 0, 10, ${Math.round(file.channels[i].pan*127)}\n${i+1}, 0, Title_t, ${file.channels[i].name}\n${i+1}, 0, Instrument_name_t, ${file.channels[i].instrument.identifier}\n`;
-		if(file.channels[i].instrument.resonance) outstr+=`${i+1}, 0, Control_c, 0, 71, ${Math.round(file.channels[i].instrument.resonance.value*127)}\n`;
+		//future stuff, i don't know about 
+		/*if(file.channels[i].instrument.resonance) outstr+=`${i+1}, 0, Control_c, 0, 71, ${Math.round(file.channels[i].instrument.resonance.value*127)}\n`;
 		else if(file.channels[i].instrument.filter_resonance) outstr+=`${i+1}, 0, Control_c, 0, 71, ${Math.round(file.channels[i].instrument.filter_resonance.value*127)}\n`;
 		if(file.channels[i].instrument.release) outstr+=`${i+1}, 0, Control_c, 0, 72, ${Math.round(file.channels[i].instrument.release.value*127)}\n`;
 		if(file.channels[i].instrument.attack) outstr+=`${i+1}, 0, Control_c, 0, 73, ${Math.round(file.channels[i].instrument.attack.value*127)}\n`;
 		if(file.channels[i].instrument.cutoff) outstr+=`${i+1}, 0, Control_c, 0, 74, ${Math.round(file.channels[i].instrument.cutoff.value*127)}\n`;
 		else if(file.channels[i].instrument.filter_cutoff) outstr+=`${i+1}, 0, Control_c, 0, 74, ${Math.round(file.channels[i].instrument.filter_cutoff.value*127)}\n`;
-		if(file.channels[i].instrument.detune) outstr+=`${i+1}, 0, Control_c, 0, 94, ${Math.round(file.channels[i].instrument.detune.value*127)}\n`;
-		//for sustain/decay/release idk stuff sorry
+		if(file.channels[i].instrument.detune) outstr+=`${i+1}, 0, Control_c, 0, 94, ${Math.round(file.channels[i].instrument.detune.value*127)}\n`;*/
+		//The numbers, what do they mean?
 		let events = [];
 		for(let j = 0; j < file.channels[i].regions.length; j++){
 			file.channels[i].regions[j].notes.sort(compare);
