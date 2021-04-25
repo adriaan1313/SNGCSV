@@ -324,7 +324,6 @@ function go(){
 		events.forEach(e => outstr += e);
 		
 		outstr+=`${i+1}, ${file.channels[i].regions[file.channels[i].regions.length-1].position+file.channels[i].regions[file.channels[i].regions.length-1].length}, End_track\n`;
-		//outstr+=`${i+1}, ${file.channels[i].regions[file.channels[i].regions.length-1].position+file.channels[i].regions[file.channels[i].regions.length-1].length}, End_track\n`;
 	}
 	outstr+="0, 0, End_of_file\n";
 	csv.value=outstr;
